@@ -1,0 +1,70 @@
+name: Sync pricing catalog
+
+on:
+  schedule:
+    # Mondays 09:00 UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Fetch official prices and apply diffs
+        run: npm run sync-prices:write:fallback
+
+      - name: Summarize report
+        id: report
+        run: |
+          REPORT=$(ls -1 scripts/sync-prices-out/report-*.json | sort | tail -n 1)
+          echo "path=$REPORT" >> "$GITHUB_OUTPUT"
+          UPDATED=$(node -e "const r=require('./'+process.argv[1]); console.log(r.updated.length)" "$REPORT")
+          echo "updated=$UPDATED" >> "$GITHUB_OUTPUT"
+          echo "Updated models: $UPDATED"
+          node -e "const r=require('./'+process.argv[1]); console.log(JSON.stringify(r.updated,null,2))" "$REPORT"
+
+      - name: Create pull request
+        if: steps.report.outputs.updated != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'chore: sync model pricing from official docs'
+          title: 'chore: sync model pricing from official docs'
+          body: |
+            ## Summary
+            Automated weekly pricing sync (Option B).
+
+            - Sources: official provider pricing/docs URLs
+            - Fallback: LiteLLM model cost map only when a model was missing from the official page parse
+            - Please spot-check changed rates against each model's `sourceUrl` before merge
+
+            ## Approve
+            Review the diff, then **merge this PR** to publish updated rates.
+          branch: chore/sync-prices
+          delete-branch: true
+          add-paths: |
+            src/data/models.ts
+            src/data/changelog.ts
+
+      - name: Upload sync report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-sync-report
+          path: scripts/sync-prices-out/
+          if-no-files-found: ignore

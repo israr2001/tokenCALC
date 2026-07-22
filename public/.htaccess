@@ -1,0 +1,11 @@
+# Apache SPA fallback for TokenCALC on a subdomain (tools.yourdomain.com)
+# Place this file in the web root next to index.html (inside dist/ after build — copied from public/)
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

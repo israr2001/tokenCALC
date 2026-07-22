@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Token Calculator &amp; LLM Cost Estimator | TokenCALC</title>
+    <meta
+      name="description"
+      content="Free privacy-first AI token calculator. Count tokens Exactly or Approximatively, estimate API costs across OpenAI, Anthropic, Google, DeepSeek, and more — text stays in your browser."
+    />
+    <meta
+      name="keywords"
+      content="token calculator, AI token counter, LLM cost estimator, OpenAI token calculator, Claude token calculator, Gemini token calculator, API pricing calculator"
+    />
+    <meta name="author" content="TokenCALC" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0f6b4c" />
+    <link rel="canonical" href="__SITE_URL__/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TokenCALC" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta
+      property="og:title"
+      content="AI Token Calculator &amp; LLM Cost Estimator | TokenCALC"
+    />
+    <meta
+      property="og:description"
+      content="Free privacy-first AI token calculator. Honest Exact/Approx counts and curated API cost estimates — text never leaves your browser."
+    />
+    <meta property="og:image" content="__SITE_URL__/og.svg" />
+    <meta property="og:image:alt" content="TokenCALC — AI token and cost calculator" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AI Token Calculator &amp; LLM Cost Estimator | TokenCALC"
+    />
+    <meta
+      name="twitter:description"
+      content="Free privacy-first AI token calculator. Honest Exact/Approx counts and curated API cost estimates — text never leaves your browser."
+    />
+    <meta name="twitter:image" content="__SITE_URL__/og.svg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "__SITE_URL__/#website",
+            "url": "__SITE_URL__/",
+            "name": "TokenCALC",
+            "description": "Privacy-first AI token calculator and LLM API cost estimator.",
+            "inLanguage": "en",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "TokenCALC ecosystem",
+              "url": "__SITE_URL__/"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "__SITE_URL__/#app",
+            "name": "TokenCALC Token Calculator",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Any",
+            "url": "__SITE_URL__/",
+            "description": "Browser-based token calculator and LLM API cost estimator for prompts, documents, code, and chat messages. Exact OpenAI tokenization with honest Approx labels for other providers.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "featureList": [
+              "Exact and Approx token counting",
+              "Multi-provider API cost estimates",
+              "Cache hit and batch pricing",
+              "Monthly usage projector",
+              "Model comparison and CSV export",
+              "Shareable estimate URLs",
+              "Privacy-first local processing"
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "__SITE_URL__/#howto",
+            "name": "How to estimate LLM API cost with TokenCALC",
+            "description": "Count tokens locally and estimate LLM API cost before calling a model.",
+            "url": "__SITE_URL__/",
+            "totalTime": "PT2M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Paste your prompt",
+                "text": "Paste a prompt, document excerpt, code snippet, or chat message into the calculator."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Choose a model",
+                "text": "Select a model from OpenAI, Anthropic, Google, DeepSeek, xAI, Mistral, or Groq."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Set output size and options",
+                "text": "Estimate output tokens and optionally set cache hit percent or Batch API pricing."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Review cost and monthly projection",
+                "text": "Read Exact or Approx token counts, request cost, context warnings, and daily/monthly/yearly spend."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Compare or share",
+                "text": "Compare models side by side, export CSV, or copy a shareable estimate URL."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "__SITE_URL__/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does TokenCALC send my text to a server?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Tokenization and cost estimates run in your browser. Your prompt text is not uploaded to TokenCALC servers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do Exact and Approx mean?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Exact means we use a matching OpenAI tokenizer encoding (such as o200k_base) in the browser. Approx means the provider tokenizer is not available in-browser, so we use a labeled heuristic instead of pretending the count is exact."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are the API prices live?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Prices are manually curated and stamped with a lastVerified date plus links to official provider pricing pages. TokenCALC does not scrape or fake live price APIs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I project monthly LLM spend?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Enter active users and messages per user per day to project daily, monthly, and yearly cost from your per-request estimate, including cache and batch settings when available."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <main style="max-width: 40rem; margin: 2rem auto; font-family: system-ui, sans-serif">
+        <h1>TokenCALC — AI token &amp; cost calculator</h1>
+        <p>
+          Free privacy-first token calculator and LLM API cost estimator.
+          Enable JavaScript to use the interactive calculator. Pricing is
+          curated manually with verification dates and official source links.
+        </p>
+        <ul>
+          <li><a href="__SITE_URL__/">Calculator</a></li>
+          <li><a href="__SITE_URL__/providers">Providers</a></li>
+          <li><a href="__SITE_URL__/guides">Guides</a></li>
+          <li><a href="__SITE_URL__/sitemap">HTML sitemap</a></li>
+        </ul>
+      </main>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
