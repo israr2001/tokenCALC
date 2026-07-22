@@ -440,6 +440,7 @@ export const models: ModelRecord[] = [
     pricing: {
       inputPerMillion: 0.435,
       outputPerMillion: 0.87,
+      cachedInputPerMillion: 0.003625,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
@@ -455,8 +456,8 @@ export const models: ModelRecord[] = [
     apiModelId: 'grok-4',
     contextWindow: 256_000,
     pricing: {
-      inputPerMillion: 1.25,
-      outputPerMillion: 2.5,
+      inputPerMillion: 3,
+      outputPerMillion: 15,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
@@ -472,6 +473,7 @@ export const models: ModelRecord[] = [
     pricing: {
       inputPerMillion: 3,
       outputPerMillion: 15,
+      cachedInputPerMillion: 0.75,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
@@ -487,6 +489,7 @@ export const models: ModelRecord[] = [
     pricing: {
       inputPerMillion: 0.3,
       outputPerMillion: 0.5,
+      cachedInputPerMillion: 0.075,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
@@ -517,8 +520,8 @@ export const models: ModelRecord[] = [
     apiModelId: 'mistral-small-latest',
     contextWindow: 128_000,
     pricing: {
-      inputPerMillion: 0.1,
-      outputPerMillion: 0.3,
+      inputPerMillion: 0.06,
+      outputPerMillion: 0.18,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
@@ -532,8 +535,8 @@ export const models: ModelRecord[] = [
     apiModelId: 'codestral-latest',
     contextWindow: 256_000,
     pricing: {
-      inputPerMillion: 0.3,
-      outputPerMillion: 0.9,
+      inputPerMillion: 1,
+      outputPerMillion: 3,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
@@ -547,8 +550,8 @@ export const models: ModelRecord[] = [
     apiModelId: 'ministral-8b-latest',
     contextWindow: 128_000,
     pricing: {
-      inputPerMillion: 0.1,
-      outputPerMillion: 0.1,
+      inputPerMillion: 0.15,
+      outputPerMillion: 0.15,
     },
     tokenizer: 'approx',
     lastVerified: '2026-07-22',
