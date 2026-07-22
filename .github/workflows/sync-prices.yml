@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: npm
@@ -41,7 +41,7 @@ jobs:
 
       - name: Create pull request
         if: steps.report.outputs.updated != '0'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: 'chore: sync model pricing from official docs'
           title: 'chore: sync model pricing from official docs'
@@ -63,7 +63,7 @@ jobs:
 
       - name: Upload sync report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: price-sync-report
           path: scripts/sync-prices-out/
