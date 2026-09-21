@@ -3,7 +3,7 @@ import type { ModelRecord } from './types'
 /**
  * Curated starter catalog. Rates are manual (not scraped).
  * Verify against each model's `sourceUrl` before treating as live.
- * lastVerified: 2026-07-22
+ * lastVerified: 2026-09-21
  */
 export const models: ModelRecord[] = [
   // —— OpenAI ——
@@ -422,12 +422,13 @@ export const models: ModelRecord[] = [
     apiModelId: 'deepseek-v4-flash',
     contextWindow: 1_000_000,
     pricing: {
-      inputPerMillion: 0.14,
-      outputPerMillion: 0.28,
-      cachedInputPerMillion: 0.0028,
+      inputPerMillion: 0.3,
+      outputPerMillion: 1.2,
+      cacheWritePerMillion: 0,
+      cachedInputPerMillion: 0.006,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://api-docs.deepseek.com/quick_start/pricing',
   },
   {
@@ -438,12 +439,13 @@ export const models: ModelRecord[] = [
     apiModelId: 'deepseek-v4-pro',
     contextWindow: 1_000_000,
     pricing: {
-      inputPerMillion: 0.435,
-      outputPerMillion: 0.87,
-      cachedInputPerMillion: 0.003625,
+      inputPerMillion: 1.32,
+      outputPerMillion: 3.96,
+      cacheWritePerMillion: 0,
+      cachedInputPerMillion: 0.044,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://api-docs.deepseek.com/quick_start/pricing',
   },
 
@@ -456,11 +458,12 @@ export const models: ModelRecord[] = [
     apiModelId: 'grok-4',
     contextWindow: 256_000,
     pricing: {
-      inputPerMillion: 3,
-      outputPerMillion: 15,
+      inputPerMillion: 1.25,
+      outputPerMillion: 2.5,
+      cachedInputPerMillion: 0.2,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://docs.x.ai/docs/models',
   },
   {
@@ -471,12 +474,12 @@ export const models: ModelRecord[] = [
     apiModelId: 'grok-3',
     contextWindow: 131_072,
     pricing: {
-      inputPerMillion: 3,
-      outputPerMillion: 15,
-      cachedInputPerMillion: 0.75,
+      inputPerMillion: 1.25,
+      outputPerMillion: 2.5,
+      cachedInputPerMillion: 0.2,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://docs.x.ai/docs/models',
   },
   {
@@ -487,12 +490,12 @@ export const models: ModelRecord[] = [
     apiModelId: 'grok-3-mini',
     contextWindow: 131_072,
     pricing: {
-      inputPerMillion: 0.3,
-      outputPerMillion: 0.5,
-      cachedInputPerMillion: 0.075,
+      inputPerMillion: 1.25,
+      outputPerMillion: 2.5,
+      cachedInputPerMillion: 0.2,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://docs.x.ai/docs/models',
   },
 
@@ -507,9 +510,10 @@ export const models: ModelRecord[] = [
     pricing: {
       inputPerMillion: 0.5,
       outputPerMillion: 1.5,
+      cachedInputPerMillion: 0.05,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://mistral.ai/products/la-plateforme#pricing',
   },
   {
@@ -520,11 +524,12 @@ export const models: ModelRecord[] = [
     apiModelId: 'mistral-small-latest',
     contextWindow: 128_000,
     pricing: {
-      inputPerMillion: 0.06,
-      outputPerMillion: 0.18,
+      inputPerMillion: 0.15,
+      outputPerMillion: 0.6,
+      cachedInputPerMillion: 0.015,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://mistral.ai/products/la-plateforme#pricing',
   },
   {
@@ -535,11 +540,12 @@ export const models: ModelRecord[] = [
     apiModelId: 'codestral-latest',
     contextWindow: 256_000,
     pricing: {
-      inputPerMillion: 1,
-      outputPerMillion: 3,
+      inputPerMillion: 0.3,
+      outputPerMillion: 0.9,
+      cachedInputPerMillion: 0.03,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://mistral.ai/products/la-plateforme#pricing',
   },
   {
@@ -552,9 +558,10 @@ export const models: ModelRecord[] = [
     pricing: {
       inputPerMillion: 0.15,
       outputPerMillion: 0.15,
+      cachedInputPerMillion: 0.015,
     },
     tokenizer: 'approx',
-    lastVerified: '2026-07-22',
+    lastVerified: '2026-09-21',
     sourceUrl: 'https://mistral.ai/products/la-plateforme#pricing',
   },
 

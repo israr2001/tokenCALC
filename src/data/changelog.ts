@@ -3,6 +3,13 @@ import type { PricingChangelogEntry } from './types'
 /** Manual changelog for curated price updates (no live sync). */
 export const pricingChangelog: PricingChangelogEntry[] = [
   {
+    date: '2026-09-21',
+    summary:
+      'Price sync: 9 model(s) updated (deepseek/deepseek-v4-flash, deepseek/deepseek-v4-pro, xai/grok-4, xai/grok-3, xai/grok-3-mini, mistral/mistral-large-3, mistral/mistral-small, mistral/codestral, mistral/ministral-8b). Official docs first; LiteLLM only for SPA gaps.',
+    modelIds: ['deepseek/deepseek-v4-flash', 'deepseek/deepseek-v4-pro', 'xai/grok-4', 'xai/grok-3', 'xai/grok-3-mini', 'mistral/mistral-large-3', 'mistral/mistral-small', 'mistral/codestral', 'mistral/ministral-8b'],
+  },
+
+  {
     date: '2026-07-22',
     summary:
       'Price sync: 7 model(s) updated (deepseek/deepseek-v4-pro, xai/grok-4, xai/grok-3, xai/grok-3-mini, mistral/mistral-small, mistral/codestral, mistral/ministral-8b). Official docs first; LiteLLM only for SPA gaps.',
